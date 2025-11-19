@@ -13,7 +13,7 @@ const API_BASE_URL = 'https://apis.data.go.kr/1220000/retrieveTrifFxrtInfo/getRe
 
 // @ts-ignore - import.meta is a valid property in modern bundlers like Vite
 const ENV_KEY_VITE = import.meta && import.meta.env ? import.meta.env.VITE_SERVICE_KEY : undefined;
-const ENV_KEY_REACT = process && process.env ? process.env.REACT_APP_SERVICE_KEY : undefined;
+const ENV_KEY_REACT = typeof process !== 'undefined' && process.env ? process.env.REACT_APP_SERVICE_KEY : undefined;
 
 const SERVICE_KEY = ENV_KEY_VITE || ENV_KEY_REACT || '';
 
