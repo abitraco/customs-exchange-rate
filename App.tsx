@@ -28,7 +28,8 @@ const TRANSLATIONS = {
         titleJpy: '주간 환율 변동 추이 (일본 엔)'
     },
     card: { vsLastWeek: '지난주 대비' },
-    footer: '<a href="https://www.abitra.co" target="_blank" rel="noopener noreferrer">(주)아비트라서울 </a>',
+    footer: '(주)아비트라서울',
+    footerLink: 'https://www.abitra.co',
     info: {
       text: '데이터는 관세청 공공 API를 통해 제공됩니다.',
       periodPrefix: '금주 적용기간: ',
@@ -62,146 +63,58 @@ const TRANSLATIONS = {
   }
 };
 
-function App() {
-  const [language, setLanguage] = useState<Language>('KO'); // Default to Korean
+const App: React.FC = () => {
+  const [language, setLanguage] = useState<Language>('KO');
   const [activeType, setActiveType] = useState<RateType>(RateType.IMPORT);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [allData, setAllData] = useState<RateData[]>([]); // Flattened data from all weeks
+  const [allData, setAllData] = useState<RateData[]>([]);
   const [currentWeekData, setCurrentWeekData] = useState<RateData[]>([]);
   const [prevWeekData, setPrevWeekData] = useState<RateData[]>([]);
-  
-  // Ref to track polling interval to clear it on unmount
-  const pollingRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const t = TRANSLATIONS[language];
-  const WEEKS_TO_FETCH = 12;
+  const t = TRANSLATIONS[language] as any;
 
-  // Calculate the current period string based on the loaded currentWeekData
-  const currentPeriodRange = useMemo(() => {
-      if (currentWeekData.length === 0) return '';
-      
-      // Extract date from the first item of current data (format: YYYY-MM-DD)
-      const dateStr = currentWeekData[0].date; // e.g. 2023-10-29
-      const [year, month, day] = dateStr.split('-').map(Number);
-      
-      const start = new Date(year, month - 1, day);
-      const end = new Date(start);
-      end.setDate(start.getDate() + 6); // Add 6 days for Saturday
-      
-      const formatDate = (date: Date) => {
-          const yyyy = date.getFullYear();
-          const mm = String(date.getMonth() + 1).padStart(2, '0');
-          const dd = String(date.getDate()).padStart(2, '0');
-          return `${yyyy}-${mm}-${dd}`;
-      };
-      
-      return `${formatDate(start)} 00:00 ~ ${formatDate(end)} 24:00`;
-  }, [currentWeekData]);
-
-  // Initial Data Load
   useEffect(() => {
-    const loadData = async () => {
+    const fetchInitialData = async () => {
       setLoading(true);
-      const weekDates = getRecentSundays(WEEKS_TO_FETCH); // ['20231029', '20231022', ...]
-      
+      const sundays = getRecentSundays(12);
       try {
-        // Parallel fetch with caching implemented in service layer
-        const promises = weekDates.map(date => fetchWeeklyRates(date, activeType));
-        const results = await Promise.all(promises);
-        
-        const flattened = results.flat();
-        setAllData(flattened);
-        
-        // The first result corresponds to the most recent date requested
-        if (results.length > 0) {
-          setCurrentWeekData(results[0]);
-        }
-        if (results.length > 1) {
-            setPrevWeekData(results[1]);
-        }
+        const data = await Promise.all(sundays.map(day => fetchWeeklyRates(day, activeType)));
+        const flatData = data.flat();
+        setAllData(flatData);
+        setCurrentWeekData(data[0] || []);
+        setPrevWeekData(data[1] || []);
       } catch (error) {
-        console.error("Failed to load data", error);
+        console.error("Error fetching initial data:", error);
       } finally {
         setLoading(false);
       }
     };
-
-    loadData();
-    
-    // Cleanup polling on unmount or type change
-    return () => {
-        if (pollingRef.current) clearTimeout(pollingRef.current);
-    };
+    fetchInitialData();
   }, [activeType]);
 
-  // Polling Logic for Next Week's Data
-  useEffect(() => {
-      const checkNewRates = async () => {
-          const nextSundayStr = getNextWeekSundayIfApplicable();
-          
-          if (!nextSundayStr) {
-              // Not time yet (Before Fri 17:00), stop polling
-              return; 
-          }
-
-          // Check if we already have this data in state
-          const nextSundayFormatted = formatDateForDisplay(nextSundayStr);
-          const alreadyExists = allData.some(d => d.date === nextSundayFormatted);
-
-          if (alreadyExists) {
-              // Already loaded, no need to poll
-              return;
-          }
-
-          console.log(`Checking for new rates for: ${nextSundayStr} (Fri 17:00+ Rule)`);
-          
-          // Try to fetch WITHOUT mock data (allowMock = false)
-          const newData = await fetchWeeklyRates(nextSundayStr, activeType, false);
-
-          if (newData && newData.length > 0) {
-              console.log("New rates found! Updating dashboard.");
-              
-              // Update State: New data becomes current, current becomes prev
-              setAllData(prev => [...newData, ...prev]);
-              setPrevWeekData(currentWeekData); // Push current to prev
-              setCurrentWeekData(newData);      // New data is now current
-          } else {
-              // No data yet, schedule retry in 15 minutes
-              console.log("New rates not published yet. Retrying in 15 minutes.");
-              pollingRef.current = setTimeout(checkNewRates, 15 * 60 * 1000);
-          }
-      };
-
-      // Run the check
-      checkNewRates();
-
-      return () => {
-          if (pollingRef.current) clearTimeout(pollingRef.current);
-      };
-  }, [activeType, allData, currentWeekData]);
-
-  // Prepare Chart Data
   const chartData = useMemo<ChartDataPoint[]>(() => {
     const dataByDate = new Map<string, ChartDataPoint>();
-
     allData.forEach(item => {
-      const dateKey = item.date;
-      if (!dataByDate.has(dateKey)) {
-        dataByDate.set(dateKey, { date: dateKey });
+      if (!dataByDate.has(item.date)) {
+        dataByDate.set(item.date, { date: item.date });
       }
-      const point = dataByDate.get(dateKey)!;
-      
-      // Only track major currencies for the main chart to avoid clutter
+      const point = dataByDate.get(item.date)!;
       if (['USD', 'JPY', 'EUR', 'CNY'].includes(item.currencyCode)) {
-          point[item.currencyCode] = item.rate;
+        point[item.currencyCode] = item.rate;
       }
     });
-
-    return Array.from(dataByDate.values());
+    return Array.from(dataByDate.values()).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   }, [allData]);
 
-  // Helper to get rates for Stat Cards
   const getRate = (data: RateData[], code: string) => data.find(d => d.currencyCode === code)?.rate || 0;
+
+  const currentPeriod = useMemo(() => {
+    if (!currentWeekData.length) return '';
+    const startDate = new Date(currentWeekData[0].date);
+    const endDate = new Date(startDate);
+    endDate.setDate(startDate.getDate() + 6);
+    return `${formatDateForDisplay(startDate.toISOString().split('T')[0])} ~ ${formatDateForDisplay(endDate.toISOString().split('T')[0])}`;
+  }, [currentWeekData]);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans">
@@ -215,7 +128,6 @@ function App() {
 
       <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        {/* Warning/Info Banner */}
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 rounded-r-md">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -226,87 +138,27 @@ function App() {
                 {t.info.text}
               </p>
               <p className="text-sm text-blue-700 font-medium mt-1">
-                {t.info.periodPrefix} {currentPeriodRange}
+                {t.info.periodPrefix} {currentPeriod}
               </p>
-              {t.info.note && (
-                  <p className="text-xs text-blue-500 opacity-75 mt-1">
-                    {t.info.note}
-                  </p>
-              )}
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Top Currency Cards */}
-            <StatCard 
-                currency={language === 'KO' ? "미국 달러" : "US Dollar"}
-                code="USD" 
-                rate={getRate(currentWeekData, 'USD')} 
-                prevRate={getRate(prevWeekData, 'USD')}
-                label={t.card.vsLastWeek}
-            />
-            <StatCard 
-                currency={language === 'KO' ? "유로" : "Euro"}
-                code="EUR" 
-                rate={getRate(currentWeekData, 'EUR')} 
-                prevRate={getRate(prevWeekData, 'EUR')} 
-                label={t.card.vsLastWeek}
-            />
-            <StatCard 
-                currency={language === 'KO' ? "중국 위안" : "Chinese Yuan"}
-                code="CNY" 
-                rate={getRate(currentWeekData, 'CNY')} 
-                prevRate={getRate(prevWeekData, 'CNY')} 
-                label={t.card.vsLastWeek}
-            />
-            <StatCard 
-                currency={language === 'KO' ? "일본 엔 (100)" : "Japanese Yen (100)"}
-                code="JPY" 
-                rate={getRate(currentWeekData, 'JPY')} 
-                prevRate={getRate(prevWeekData, 'JPY')} 
-                label={t.card.vsLastWeek}
-            />            
+            <StatCard currency="미국 달러" code="USD" rate={getRate(currentWeekData, 'USD')} prevRate={getRate(prevWeekData, 'USD')} label={t.card.vsLastWeek} />
+            <StatCard currency="유로" code="EUR" rate={getRate(currentWeekData, 'EUR')} prevRate={getRate(prevWeekData, 'EUR')} label={t.card.vsLastWeek} />
+            <StatCard currency="중국 위안" code="CNY" rate={getRate(currentWeekData, 'CNY')} prevRate={getRate(prevWeekData, 'CNY')} label={t.card.vsLastWeek} />
+            <StatCard currency="일본 엔 (100)" code="JPY" rate={getRate(currentWeekData, 'JPY')} prevRate={getRate(prevWeekData, 'JPY')} label={t.card.vsLastWeek} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Chart Section - Separated into 4 distinct charts */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <RateChart 
-                data={chartData} 
-                isLoading={loading} 
-                title={t.chart.titleUsd}
-                currencies={[
-                    { key: 'USD', color: '#ef4444' } // Red
-                ]}
-            />
-            <RateChart 
-                data={chartData} 
-                isLoading={loading} 
-                title={t.chart.titleEur}
-                currencies={[
-                    { key: 'EUR', color: '#3b82f6' } // Blue
-                ]}
-            />
-            <RateChart 
-                data={chartData} 
-                isLoading={loading} 
-                title={t.chart.titleCny} 
-                currencies={[
-                    { key: 'CNY', color: '#d97706' } // Amber (darker yellow for contrast)
-                ]}
-            />
-            <RateChart 
-                data={chartData} 
-                isLoading={loading} 
-                title={t.chart.titleJpy} 
-                currencies={[
-                    { key: 'JPY', color: '#22c55e' } // Green
-                ]}
-            />
+            <RateChart data={chartData} isLoading={loading} title={t.chart.titleUsd} currencies={[{ key: 'USD', color: '#ef4444' }]} />
+            <RateChart data={chartData} isLoading={loading} title={t.chart.titleEur} currencies={[{ key: 'EUR', color: '#3b82f6' }]} />
+            <RateChart data={chartData} isLoading={loading} title={t.chart.titleCny} currencies={[{ key: 'CNY', color: '#d97706' }]} />
+            <RateChart data={chartData} isLoading={loading} title={t.chart.titleJpy currencies={[{ key: 'JPY', color: '#22c55e' }]} />
           </div>
-
-          {/* Table Section */}
+          
           <div className="lg:col-span-1 lg:h-auto min-h-[600px]">
             <RateTable data={currentWeekData} isLoading={loading} labels={t.table} />
           </div>
@@ -315,9 +167,21 @@ function App() {
 
       <footer className="bg-white border-t border-gray-200 mt-8">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} {t.footer}
-          </p>
+        <p className="text-center text-sm text-gray-500">
+          &copy; {new Date().getFullYear()}{' '}
+          {t.footerLink ? (
+            <a
+              href={t.footerLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              {t.footer}
+            </a>
+          ) : (
+            t.footer
+          )}
+        </p>
         </div>
       </footer>
     </div>
