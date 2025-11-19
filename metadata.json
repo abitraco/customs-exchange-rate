@@ -1,0 +1,5 @@
+{
+  "name": "Korea Customs Exchange Rate Dashboard",
+  "description": "A dashboard displaying weekly customs exchange rates using the Korea Customs Service API. Features include historical trend charts, data tables, and export/import rate switching.",
+  "requestFramePermissions": []
+}
