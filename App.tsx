@@ -156,7 +156,7 @@ const App: React.FC = () => {
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleUsd} currencies={[{ key: 'USD', color: '#ef4444' }]} />
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleEur} currencies={[{ key: 'EUR', color: '#3b82f6' }]} />
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleCny} currencies={[{ key: 'CNY', color: '#d97706' }]} />
-            <RateChart data={chartData} isLoading={loading} title={t.chart.titleJpy currencies={[{ key: 'JPY', color: '#22c55e' }]} />
+            <RateChart data={chartData} isLoading={loading} title={t.chart.titleJpy} currencies={[{ key: 'JPY', color: '#22c55e' }]} />
           </div>
           
           <div className="lg:col-span-1 lg:h-auto min-h-[600px]">
