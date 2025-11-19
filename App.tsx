@@ -28,7 +28,7 @@ const TRANSLATIONS = {
         titleJpy: '주간 환율 변동 추이 (일본 엔)'
     },
     card: { vsLastWeek: '지난주 대비' },
-    footer: '<a href="https://www.abitra.co" target="_blank" rel="noopener noreferrer">(주)아비트라서울</a>',
+    footer: '<a href="https://www.abitra.co" target="_blank" rel="noopener noreferrer">(주)아비트라서울 </a>',
     info: {
       text: '데이터는 관세청 공공 API를 통해 제공됩니다.',
       periodPrefix: '금주 적용기간: ',
