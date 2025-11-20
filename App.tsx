@@ -14,7 +14,7 @@ const TRANSLATIONS = {
 
 
   KO: {
-    header: { title: "관세환율", import: "수입", export: "수출", bankRate: "은행환율보기" },
+    header: { title: "관세청고시 과세환율", import: "수입", export: "수출", bankRate: "은행환율보기" },
     table: {
       title: "환율목록",
       searchPlaceholder: "통화 검색...",
