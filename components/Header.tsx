@@ -39,43 +39,26 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between py-3 md:h-16 md:py-0 gap-3 md:gap-0">
 
-                    {/* Mobile: Top Row (Title + Lang), Desktop: Left Side (Title) */}
-                    <div className="flex justify-between items-center w-full md:w-auto">
-                        <div className="flex items-center gap-2 text-blue-600 min-w-0 pr-2">
-                            <Activity className="h-6 w-6 md:h-8 md:w-8 flex-shrink-0" />
-                            <span className="font-bold text-lg md:text-xl tracking-tight text-gray-900 truncate block">
-                                {labels.title}
-                            </span>
+                    {/* Left Group: Title + Buttons */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 w-full md:w-auto">
+                        
+                        {/* Title Row */}
+                        <div className="flex justify-between items-center w-full md:w-auto">
+                            <div className="flex items-center gap-2 text-blue-600 min-w-0 pr-2">
+                                <Activity className="h-6 w-6 md:h-8 md:w-8 flex-shrink-0" />
+                                <span className="font-bold text-lg md:text-xl tracking-tight text-gray-900 truncate block">
+                                    {labels.title}
+                                </span>
+                            </div>
+
+                            {/* Mobile Language Toggle */}
+                            <div className="md:hidden flex-shrink-0">
+                                <LanguageToggle />
+                            </div>
                         </div>
-
-                        {/* Mobile Language Toggle - Shown only on mobile */}
-                        <div className="md:hidden flex-shrink-0">
-                            <LanguageToggle />
-                        </div>
-                    </div>
-
-                    {/* Mobile: Bottom Row (Buttons), Desktop: Right Side (Lang + Buttons) */}
-                    <div className="flex items-center gap-3 w-full md:w-auto">
-
-                        {/* Bank Rate Link */}
-                        <a
-                            href="https://exrate.abitra.co/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors whitespace-nowrap mr-2"
-                        >
-                            {labels.bankRate}
-                        </a>
-
-                        {/* Desktop Language Toggle - Shown only on desktop */}
-                        <div className="hidden md:block">
-                            <LanguageToggle />
-                        </div>
-
-                        <div className="hidden md:block h-6 w-px bg-gray-200 mx-2"></div>
 
                         {/* Import/Export Buttons */}
-                        <div className="flex flex-1 md:flex-none gap-2">
+                        <div className="flex gap-2 w-full md:w-auto">
                             <button
                                 onClick={() => onTypeChange(RateType.IMPORT)}
                                 className={`flex-1 md:flex-none inline-flex justify-center items-center px-3 py-2 border rounded-md text-sm font-medium transition-colors duration-150 ${activeType === RateType.IMPORT
@@ -96,6 +79,28 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
                                 <Plane className="mr-2 h-4 w-4" />
                                 {labels.export}
                             </button>
+                        </div>
+                    </div>
+
+                    {/* Right Group: Bank Rate + Separator + Lang */}
+                    <div className="flex items-center justify-end gap-3 w-full md:w-auto">
+                        
+                        {/* Bank Rate Link */}
+                        <a
+                            href="https://exrate.abitra.co/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors whitespace-nowrap"
+                        >
+                            {labels.bankRate}
+                        </a>
+
+                        {/* Vertical Separator */}
+                        <div className="hidden md:block h-4 w-px bg-gray-300 mx-1"></div>
+
+                        {/* Desktop Language Toggle */}
+                        <div className="hidden md:block">
+                            <LanguageToggle />
                         </div>
                     </div>
                 </div>
