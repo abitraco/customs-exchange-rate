@@ -182,6 +182,18 @@ const App: React.FC = () => {
               t.footer
             )}
           </p>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            {'Made with 💻 in Seoul. If you find this useful, '}
+            <a
+              href="https://paypal.me/chancekim79"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
+              buy me a coffee ☕
+            </a>
+            !
+          </p>
         </div>
       </footer>
     </div>
