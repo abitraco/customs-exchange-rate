@@ -55,6 +55,7 @@ const TRANSLATIONS = {
     },
     card: { vsLastWeek: 'vs last week' },
     footer: 'Korea Customs Rate Dashboard. Data provided by Korea Customs Service.',
+    footerLink: 'https://www.abitra.co',
     info: {
       text: 'Data is provided via the Korea Customs Service Public API.',
       periodPrefix: 'Current Period: ',
