@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
                             href="https://exrate.abitra.co/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors whitespace-nowrap"
+                            className="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors whitespace-nowrap mr-2"
                         >
                             {labels.bankRate}
                         </a>
