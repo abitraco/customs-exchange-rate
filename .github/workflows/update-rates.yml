@@ -1,0 +1,38 @@
+name: Update exchange rate snapshot
+
+on:
+  schedule:
+    - cron: '0 10 * * 5' # Every Friday 19:00 KST (UTC+9)
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate latest exchange rate snapshot
+        run: npm run generate:data
+        env:
+          CUSTOMS_API_KEY: ${{ secrets.CUSTOMS_API_KEY }}
+
+      - name: Commit and push if changed
+        run: |
+          if git status --porcelain -- public/exchange-rates.json | grep .; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/exchange-rates.json
+            git commit -m "chore: update exchange rate snapshot"
+            git push
+          else
+            echo "No changes to commit"
+          fi

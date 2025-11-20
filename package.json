@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:data": "node scripts/generateRates.js"
   },
   "dependencies": {
+    "fast-xml-parser": "^4.5.1",
     "recharts": "^3.4.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

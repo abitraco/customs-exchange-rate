@@ -21,6 +21,18 @@ export interface RateData {
     type: 'export' | 'import';
 }
 
+export interface RateWeek {
+    startDate: string; // YYYY-MM-DD (Sunday start)
+    import: RateData[];
+    export: RateData[];
+}
+
+export interface RateDataset {
+    generatedAt: string; // ISO timestamp
+    source?: string;
+    weeks: RateWeek[];
+}
+
 export enum RateType {
     EXPORT = '1',
     IMPORT = '2'

@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useMemo, useRef } from 'react';
-import { RateType, RateData, ChartDataPoint, Language } from './types';
-import { fetchWeeklyRates } from './services/customsApi';
-import { getRecentSundays, getNextWeekSundayIfApplicable, formatDateForDisplay } from './utils/dateUtils';
+import React, { useEffect, useState, useMemo } from 'react';
+import { RateType, RateData, RateDataset, ChartDataPoint, Language } from './types';
+import { fetchRateDataset } from './services/customsApi';
 import Header from './components/Header';
 import StatCard from './components/StatCard';
 import RateChart from './components/RateChart';
@@ -10,30 +9,35 @@ import { Info } from 'lucide-react';
 
 // Translation Dictionary
 const TRANSLATIONS = {
+
+
+
+
   KO: {
-    header: { title: '과세환율', import: '수입', export: '수출', bankRate: '은행환율보기' },
+    header: { title: "관세환율", import: "수입", export: "수출", bankRate: "은행환율보기" },
     table: {
-      title: '환율목록',
-      searchPlaceholder: '통화 검색...',
-      country: '국가/부호',
-      currency: '통화명',
-      rate: '환율 (KRW)',
-      date: '적용일자',
-      noData: '데이터가 없습니다.'
+      title: "환율목록",
+      searchPlaceholder: "통화 검색...",
+      country: "국가/코드",
+      currency: "통화명",
+      rate: "환율 (KRW)",
+      date: "적용일자",
+      noData: "데이터가 없습니다."
     },
     chart: {
-      titleUsd: '주간 환율 변동 추이 (미국 달러)',
-      titleEur: '주간 환율 변동 추이 (유로)',
-      titleCny: '주간 환율 변동 추이 (중국 위안)',
-      titleJpy: '주간 환율 변동 추이 (일본 엔)'
+      titleUsd: "주간 환율 추이 (미국 달러)",
+      titleEur: "주간 환율 추이 (유로)",
+      titleCny: "주간 환율 추이 (중국 위안)",
+      titleJpy: "주간 환율 추이 (일본 엔)"
     },
-    card: { vsLastWeek: '지난주 대비' },
-    footer: '(주)아비트라서울',
-    footerLink: 'https://www.abitra.co',
+    card: { vsLastWeek: "전주 대비" },
+    footer: "아비트라",
+    footerLink: "https://www.abitra.co",
     info: {
-      text: '데이터는 관세청 공공 API를 통해 제공됩니다.',
-      periodPrefix: '금주 적용기간: ',
-      note: ''
+      text: "데이터는 매주 금요일 19시에 GitHub Actions로 생성된 JSON 스냅샷을 사용합니다.",
+      periodPrefix: "현재 적용기간: ",
+      updatedPrefix: "마지막 업데이트: ",
+      note: ""
     }
   },
   EN: {
@@ -57,8 +61,9 @@ const TRANSLATIONS = {
     footer: 'Korea Customs Rate Dashboard. Data provided by Korea Customs Service.',
     footerLink: 'https://www.abitra.co',
     info: {
-      text: 'Data is provided via the Korea Customs Service Public API.',
+      text: 'Data is refreshed weekly from the Korea Customs Service and served from a static JSON snapshot.',
       periodPrefix: 'Current Period: ',
+      updatedPrefix: 'Last updated: ',
       note: ''
     }
   }
@@ -67,6 +72,7 @@ const TRANSLATIONS = {
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('KO');
   const [activeType, setActiveType] = useState<RateType>(RateType.IMPORT);
+  const [dataset, setDataset] = useState<RateDataset | null>(null);
   const [allData, setAllData] = useState<RateData[]>([]);
   const [currentWeekData, setCurrentWeekData] = useState<RateData[]>([]);
   const [prevWeekData, setPrevWeekData] = useState<RateData[]>([]);
@@ -77,13 +83,12 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchInitialData = async () => {
       setLoading(true);
-      const sundays = getRecentSundays(12);
       try {
-        const data = await Promise.all(sundays.map(day => fetchWeeklyRates(day, activeType)));
-        const flatData = data.flat();
-        setAllData(flatData);
-        setCurrentWeekData(data[0] || []);
-        setPrevWeekData(data[1] || []);
+        const data = await fetchRateDataset();
+        const orderedWeeks = [...data.weeks].sort((a, b) =>
+          new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
+        );
+        setDataset({ ...data, weeks: orderedWeeks });
       } catch (error) {
         console.error("Error fetching initial data:", error);
       } finally {
@@ -91,7 +96,18 @@ const App: React.FC = () => {
       }
     };
     fetchInitialData();
-  }, [activeType]);
+  }, []);
+
+  useEffect(() => {
+    if (!dataset) return;
+
+    const key = activeType === RateType.EXPORT ? 'export' : 'import';
+    const weeks = dataset.weeks;
+
+    setAllData(weeks.flatMap((week) => week[key]));
+    setCurrentWeekData(weeks[0]?.[key] || []);
+    setPrevWeekData(weeks[1]?.[key] || []);
+  }, [dataset, activeType]);
 
   const chartData = useMemo<ChartDataPoint[]>(() => {
     const dataByDate = new Map<string, ChartDataPoint>();
@@ -114,8 +130,15 @@ const App: React.FC = () => {
     const startDate = new Date(currentWeekData[0].date);
     const endDate = new Date(startDate);
     endDate.setDate(startDate.getDate() + 6);
-    return `${formatDateForDisplay(startDate.toISOString().split('T')[0])} ~ ${formatDateForDisplay(endDate.toISOString().split('T')[0])}`;
+    const toDateString = (date: Date) => date.toISOString().split('T')[0];
+    return `${toDateString(startDate)} ~ ${toDateString(endDate)}`;
   }, [currentWeekData]);
+
+  const lastUpdated = useMemo(() => {
+    if (!dataset?.generatedAt) return '';
+    const updatedDate = new Date(dataset.generatedAt);
+    return isNaN(updatedDate.getTime()) ? '' : updatedDate.toISOString().split('T')[0];
+  }, [dataset]);
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans">
@@ -141,6 +164,11 @@ const App: React.FC = () => {
               <p className="text-sm text-blue-700 font-medium mt-1">
                 {t.info.periodPrefix} {currentPeriod}
               </p>
+              {lastUpdated && t.info.updatedPrefix && (
+                <p className="text-xs text-blue-600 mt-1">
+                  {t.info.updatedPrefix} {lastUpdated}
+                </p>
+              )}
             </div>
           </div>
         </div>
