@@ -11,9 +11,9 @@ import { Info } from 'lucide-react';
 // Translation Dictionary
 const TRANSLATIONS = {
   KO: {
-    header: { title: '과세환율', import: '수입', export: '수출' },
+    header: { title: '과세환율', import: '수입', export: '수출', bankRate: '은행환율보기' },
     table: {
-      title: '환율 목록',
+      title: '환율목록',
       searchPlaceholder: '통화 검색...',
       country: '국가/부호',
       currency: '통화명',
@@ -21,11 +21,11 @@ const TRANSLATIONS = {
       date: '적용일자',
       noData: '데이터가 없습니다.'
     },
-    chart: { 
-        titleUsd: '주간 환율 변동 추이 (미국 달러)',
-        titleEur: '주간 환율 변동 추이 (유로)',
-        titleCny: '주간 환율 변동 추이 (중국 위안)',
-        titleJpy: '주간 환율 변동 추이 (일본 엔)'
+    chart: {
+      titleUsd: '주간 환율 변동 추이 (미국 달러)',
+      titleEur: '주간 환율 변동 추이 (유로)',
+      titleCny: '주간 환율 변동 추이 (중국 위안)',
+      titleJpy: '주간 환율 변동 추이 (일본 엔)'
     },
     card: { vsLastWeek: '지난주 대비' },
     footer: '(주)아비트라서울',
@@ -37,7 +37,7 @@ const TRANSLATIONS = {
     }
   },
   EN: {
-    header: { title: 'Korea Customs FX Rate', import: 'Import', export: 'Export' },
+    header: { title: 'Korea Customs FX Rate', import: 'Import', export: 'Export', bankRate: 'View Bank Rate' },
     table: {
       title: 'Exchange Rates List',
       searchPlaceholder: 'Search currency...',
@@ -47,11 +47,11 @@ const TRANSLATIONS = {
       date: 'Apply Date',
       noData: 'No data found.'
     },
-    chart: { 
-        titleUsd: 'Weekly Trend (USD)',
-        titleEur: 'Weekly Trend (EUR)',
-        titleCny: 'Weekly Trend (CNY)',
-        titleJpy: 'Weekly Trend (JPY)'
+    chart: {
+      titleUsd: 'Weekly Trend (USD)',
+      titleEur: 'Weekly Trend (EUR)',
+      titleCny: 'Weekly Trend (CNY)',
+      titleJpy: 'Weekly Trend (JPY)'
     },
     card: { vsLastWeek: 'vs last week' },
     footer: 'Korea Customs Rate Dashboard. Data provided by Korea Customs Service.',
@@ -118,16 +118,16 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans">
-      <Header 
-        activeType={activeType} 
-        onTypeChange={setActiveType} 
+      <Header
+        activeType={activeType}
+        onTypeChange={setActiveType}
         language={language}
         onLanguageChange={setLanguage}
         labels={t.header}
       />
 
       <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 rounded-r-md">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -145,10 +145,10 @@ const App: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
-            <StatCard currency="미국 달러" code="USD" rate={getRate(currentWeekData, 'USD')} prevRate={getRate(prevWeekData, 'USD')} label={t.card.vsLastWeek} />
-            <StatCard currency="유로" code="EUR" rate={getRate(currentWeekData, 'EUR')} prevRate={getRate(prevWeekData, 'EUR')} label={t.card.vsLastWeek} />
-            <StatCard currency="중국 위안" code="CNY" rate={getRate(currentWeekData, 'CNY')} prevRate={getRate(prevWeekData, 'CNY')} label={t.card.vsLastWeek} />
-            <StatCard currency="일본 엔 (100)" code="JPY" rate={getRate(currentWeekData, 'JPY')} prevRate={getRate(prevWeekData, 'JPY')} label={t.card.vsLastWeek} />
+          <StatCard currency="미국 달러" code="USD" rate={getRate(currentWeekData, 'USD')} prevRate={getRate(prevWeekData, 'USD')} label={t.card.vsLastWeek} />
+          <StatCard currency="유로" code="EUR" rate={getRate(currentWeekData, 'EUR')} prevRate={getRate(prevWeekData, 'EUR')} label={t.card.vsLastWeek} />
+          <StatCard currency="중국 위안" code="CNY" rate={getRate(currentWeekData, 'CNY')} prevRate={getRate(prevWeekData, 'CNY')} label={t.card.vsLastWeek} />
+          <StatCard currency="일본 엔 (100)" code="JPY" rate={getRate(currentWeekData, 'JPY')} prevRate={getRate(prevWeekData, 'JPY')} label={t.card.vsLastWeek} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -158,7 +158,7 @@ const App: React.FC = () => {
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleCny} currencies={[{ key: 'CNY', color: '#d97706' }]} />
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleJpy} currencies={[{ key: 'JPY', color: '#22c55e' }]} />
           </div>
-          
+
           <div className="lg:col-span-1 lg:h-auto min-h-[600px]">
             <RateTable data={currentWeekData} isLoading={loading} labels={t.table} />
           </div>
@@ -167,21 +167,21 @@ const App: React.FC = () => {
 
       <footer className="bg-white border-t border-gray-200 mt-8">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()}{' '}
-          {t.footerLink ? (
-            <a
-              href={t.footerLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              {t.footer}
-            </a>
-          ) : (
-            t.footer
-          )}
-        </p>
+          <p className="text-center text-sm text-gray-500">
+            &copy; {new Date().getFullYear()}{' '}
+            {t.footerLink ? (
+              <a
+                href={t.footerLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {t.footer}
+              </a>
+            ) : (
+              t.footer
+            )}
+          </p>
         </div>
       </footer>
     </div>
