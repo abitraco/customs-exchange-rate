@@ -4,7 +4,7 @@
 
 **Live Demo:** [https://customsrate.abitra.co/](https://customsrate.abitra.co/)
 - Production is served via GitHub Pages (custom domain `customsrate.abitra.co`). Static assets are published from `public/`.
-- A pre-rendered HTML table for the latest rates is generated at `/table` (`public/table/index.html`), so it works without client-side JavaScript.
+- A pre-rendered HTML table for the latest rates is generated at `/table` (`public/table/index.html`), so it works without client-side JavaScript. The table is built directly from `public/exchange-rates.json` with no additional API calls. You can regenerate it anytime with `npm run generate:table`.
 
 ## 주요 변경 사항
 - 환율 데이터는 로컬 스크립트(`npm run generate:data`)가 생성한 `public/exchange-rates.json` 한 파일로 관리됩니다.

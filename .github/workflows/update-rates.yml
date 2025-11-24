@@ -28,12 +28,16 @@ jobs:
         env:
           CUSTOMS_API_KEY: ${{ secrets.CUSTOMS_API_KEY }}
 
+      - name: Build static table from snapshot
+        run: npm run generate:table
+
       - name: Commit and push if changed
         run: |
           if git status --porcelain -- public/exchange-rates.json | grep .; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add public/exchange-rates.json
+            git add public/table.html public/table/index.html
             git commit -m "chore: update exchange rate snapshot"
             git push
           else
