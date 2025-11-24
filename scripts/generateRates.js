@@ -11,6 +11,7 @@ const TABLE_OUTPUTS = [
   path.join(PROJECT_ROOT, 'public', 'table.html'),
   path.join(PROJECT_ROOT, 'public', 'table', 'index.html')
 ];
+const IMPORTANT_CODES = ['USD', 'EUR', 'CNY', 'JPY'];
 const WEEK_COUNT = parseInt(process.env.WEEKS_TO_FETCH || '12', 10);
 
 const RateType = {
@@ -145,10 +146,19 @@ const escapeHtml = (value) => String(value || '')
   .replace(/"/g, '&quot;')
   .replace(/'/g, '&#39;');
 
-const sortRates = (list) => [...list].sort((a, b) => a.currencyCode.localeCompare(b.currencyCode));
+const pickImportantRates = (list) => {
+  const map = new Map();
+  for (const code of IMPORTANT_CODES) {
+    const hit = list.find((r) => (r.currencyCode || '').toUpperCase() === code);
+    if (hit) {
+      map.set(code, hit);
+    }
+  }
+  return IMPORTANT_CODES.map((code) => map.get(code)).filter(Boolean);
+};
 
 const buildRatesTable = (title, rates) => {
-  const rows = sortRates(rates)
+  const rows = pickImportantRates(rates)
     .map((r) => `
           <tr>
             <td>${escapeHtml(r.currencyName)}</td>
