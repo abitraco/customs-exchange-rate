@@ -5,6 +5,9 @@ on:
     - cron: '0 10 * * 5' # Every Friday 19:00 KST (UTC+9)
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   refresh:
     runs-on: ubuntu-latest

@@ -40,6 +40,7 @@
 ## 배포 (Vercel)
 - 런타임 환경 변수 없이 정적 자산만 배포하면 됩니다.
 - `public/exchange-rates.json`이 변경될 때마다 Vercel이 새 버전을 배포해 최신 스냅샷이 반영됩니다.
+- `/table` 경로에서 최신 환율을 즉시 보여주는 정적 HTML 테이블(`public/table.html`)도 함께 생성됩니다.
 
 ## 데이터 스키마
 `public/exchange-rates.json`
