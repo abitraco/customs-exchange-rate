@@ -3,6 +3,8 @@
 이 프로젝트는 대한민구 관세청 공개데이터 API를 이용해 수출/수입 환율을 시각화하는 대시보드입니다. 이제 모든 데이터는 정적 JSON으로 제공되어 런타임 API 호출 없이도 항상 최신 환율을 표시합니다.
 
 **Live Demo:** [https://customsrate.abitra.co/](https://customsrate.abitra.co/)
+- Production is served via GitHub Pages (custom domain `customsrate.abitra.co`). Static assets are published from `public/`.
+- A pre-rendered HTML table for the latest rates is generated at `/table` (`public/table/index.html`), so it works without client-side JavaScript.
 
 ## 주요 변경 사항
 - 환율 데이터는 로컬 스크립트(`npm run generate:data`)가 생성한 `public/exchange-rates.json` 한 파일로 관리됩니다.

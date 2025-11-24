@@ -7,7 +7,10 @@ const API_BASE_URL = 'https://apis.data.go.kr/1220000/retrieveTrifFxrtInfo/getRe
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(ROOT, '..');
 const OUTPUT_PATH = path.join(PROJECT_ROOT, 'public', 'exchange-rates.json');
-const TABLE_OUTPUT_PATH = path.join(PROJECT_ROOT, 'public', 'table.html');
+const TABLE_OUTPUTS = [
+  path.join(PROJECT_ROOT, 'public', 'table.html'),
+  path.join(PROJECT_ROOT, 'public', 'table', 'index.html')
+];
 const WEEK_COUNT = parseInt(process.env.WEEKS_TO_FETCH || '12', 10);
 
 const RateType = {
@@ -216,8 +219,11 @@ ${importSection}
 </body>
 </html>`;
 
-  fs.writeFileSync(TABLE_OUTPUT_PATH, html, 'utf-8');
-  console.log(`[generator] Wrote latest table view to ${TABLE_OUTPUT_PATH}`);
+  for (const target of TABLE_OUTPUTS) {
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, html, 'utf-8');
+    console.log(`[generator] Wrote latest table view to ${target}`);
+  }
 };
 
 const main = async () => {
