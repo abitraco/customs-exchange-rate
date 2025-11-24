@@ -19,6 +19,28 @@ const RateType = {
   IMPORT: '2'
 };
 
+const loadEnvFile = () => {
+  const envPath = path.join(PROJECT_ROOT, '.env');
+  if (!fs.existsSync(envPath)) return;
+
+  const lines = fs.readFileSync(envPath, 'utf-8').split(/\r?\n/);
+  for (const line of lines) {
+    if (!line || line.trim().startsWith('#')) continue;
+    const match = line.match(/^\s*([^=\s#]+)\s*=\s*(.*)\s*$/);
+    if (!match) continue;
+    const key = match[1];
+    let value = match[2];
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    if (process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+};
+
+loadEnvFile();
+
 const SERVICE_KEY = process.env.CUSTOMS_API_KEY || process.env.VITE_SERVICE_KEY || process.env.REACT_APP_SERVICE_KEY || '';
 const parser = new XMLParser({ ignoreAttributes: false });
 
