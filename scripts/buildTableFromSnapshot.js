@@ -81,6 +81,8 @@ const main = () => {
   <meta charset="utf-8">
   <title>관세청 환율 테이블</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     :root { color-scheme: light; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 24px; background: #f7f9fb; color: #111; }
