@@ -49,12 +49,15 @@ const getRecentSundays = (count) => {
   const now = new Date();
   const utc = now.getTime() + now.getTimezoneOffset() * 60000;
   const kstDate = new Date(utc + 9 * 60 * 60 * 1000);
-  const lastSunday = new Date(kstDate);
-  lastSunday.setDate(kstDate.getDate() - kstDate.getDay());
+  
+  // 이번 주 일요일 계산 (오늘이 토요일이면 내일 일요일 포함)
+  const dayOfWeek = kstDate.getDay(); // 0=일, 1=월, ..., 6=토
+  const thisSunday = new Date(kstDate);
+  thisSunday.setDate(kstDate.getDate() + (7 - dayOfWeek) % 7); // 이번 주 일요일 (일요일이면 오늘)
 
   for (let i = 0; i < count; i++) {
-    const d = new Date(lastSunday);
-    d.setDate(lastSunday.getDate() - i * 7);
+    const d = new Date(thisSunday);
+    d.setDate(thisSunday.getDate() - i * 7);
     const year = d.getFullYear();
     const month = String(d.getMonth() + 1).padStart(2, '0');
     const day = String(d.getDate()).padStart(2, '0');
