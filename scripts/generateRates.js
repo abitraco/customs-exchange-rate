@@ -49,7 +49,7 @@ const getRecentSundays = (count) => {
   const now = new Date();
   const utc = now.getTime() + now.getTimezoneOffset() * 60000;
   const kstDate = new Date(utc + 9 * 60 * 60 * 1000);
-  
+
   // 이번 주 일요일 계산 (오늘이 토요일이면 내일 일요일 포함)
   const dayOfWeek = kstDate.getDay(); // 0=일, 1=월, ..., 6=토
   const thisSunday = new Date(kstDate);
@@ -69,29 +69,23 @@ const getRecentSundays = (count) => {
 
 const formatDateForDisplay = (yyyyMMdd) => `${yyyyMMdd.substring(0, 4)}-${yyyyMMdd.substring(4, 6)}-${yyyyMMdd.substring(6, 8)}`;
 
-const generateMockData = (date, type) => {
-  const formattedDate = formatDateForDisplay(date);
-  const seed = parseInt(date, 10) % 100;
-  const noise = (base) => base + Math.sin(seed) * base * 0.05;
-  const typeStr = type === RateType.EXPORT ? 'export' : 'import';
-
-  return [
-    { id: `${date}-USD`, countryCode: 'US', currencyName: 'US Dollar', currencyCode: 'USD', rate: noise(1350), date: formattedDate, type: typeStr },
-    { id: `${date}-JPY`, countryCode: 'JP', currencyName: 'Japanese Yen', currencyCode: 'JPY', rate: noise(900), date: formattedDate, type: typeStr },
-    { id: `${date}-EUR`, countryCode: 'EU', currencyName: 'Euro', currencyCode: 'EUR', rate: noise(1450), date: formattedDate, type: typeStr },
-    { id: `${date}-CNY`, countryCode: 'CN', currencyName: 'Chinese Yuan', currencyCode: 'CNY', rate: noise(190), date: formattedDate, type: typeStr },
-    { id: `${date}-GBP`, countryCode: 'GB', currencyName: 'British Pound', currencyCode: 'GBP', rate: noise(1700), date: formattedDate, type: typeStr },
-    { id: `${date}-HKD`, countryCode: 'HK', currencyName: 'Hong Kong Dollar', currencyCode: 'HKD', rate: noise(172), date: formattedDate, type: typeStr },
-    { id: `${date}-CAD`, countryCode: 'CA', currencyName: 'Canadian Dollar', currencyCode: 'CAD', rate: noise(980), date: formattedDate, type: typeStr },
-    { id: `${date}-AUD`, countryCode: 'AU', currencyName: 'Australian Dollar', currencyCode: 'AUD', rate: noise(880), date: formattedDate, type: typeStr }
-  ];
+const loadExistingData = () => {
+  if (fs.existsSync(OUTPUT_PATH)) {
+    try {
+      const raw = fs.readFileSync(OUTPUT_PATH, 'utf-8');
+      return JSON.parse(raw);
+    } catch (e) {
+      console.warn('[generator] Failed to load existing data:', e);
+    }
+  }
+  return { weeks: [] };
 };
 
 const fetchWeek = async (date, type) => {
   const formattedDate = formatDateForDisplay(date);
   if (!SERVICE_KEY) {
-    console.warn(`[generator] SERVICE_KEY missing, using mock data for ${formattedDate} (${type}).`);
-    return generateMockData(date, type);
+    console.warn(`[generator] SERVICE_KEY missing, skipping ${formattedDate} (${type}).`);
+    return null;
   }
 
   const params = new URLSearchParams({
@@ -123,32 +117,56 @@ const fetchWeek = async (date, type) => {
       .filter((row) => !Number.isNaN(row.rate));
 
     if (!cleaned.length) {
-      console.warn(`[generator] API returned no data for ${formattedDate} (${type}), using mock.`);
-      return generateMockData(date, type);
+      console.warn(`[generator] API returned no data for ${formattedDate} (${type}).`);
+      return null;
     }
 
     return cleaned;
   } catch (error) {
-    console.warn(`[generator] Failed to fetch ${formattedDate} (${type}). Falling back to mock.`, error);
-    return generateMockData(date, type);
+    console.warn(`[generator] Failed to fetch ${formattedDate} (${type}).`, error);
+    return null;
   }
 };
 
 const buildDataset = async () => {
   const sundays = getRecentSundays(WEEK_COUNT);
+  const existingData = loadExistingData();
+  const existingWeeksMap = new Map();
+
+  if (existingData && Array.isArray(existingData.weeks)) {
+    for (const week of existingData.weeks) {
+      existingWeeksMap.set(week.startDate, week);
+    }
+  }
+
   const weeks = [];
 
   for (const date of sundays) {
+    const formattedDate = formatDateForDisplay(date);
+
+    // Try fetching fresh data
     const [exportRates, importRates] = await Promise.all([
       fetchWeek(date, RateType.EXPORT),
       fetchWeek(date, RateType.IMPORT)
     ]);
 
-    weeks.push({
-      startDate: formatDateForDisplay(date),
-      export: exportRates,
-      import: importRates
-    });
+    if (exportRates && importRates) {
+      // Both succeeded
+      weeks.push({
+        startDate: formattedDate,
+        export: exportRates,
+        import: importRates
+      });
+    } else {
+      // Failed to fetch one or both. Check existing data.
+      const existingWeek = existingWeeksMap.get(formattedDate);
+      if (existingWeek) {
+        console.log(`[generator] Using existing data for ${formattedDate} due to API failure/empty.`);
+        weeks.push(existingWeek);
+      } else {
+        console.warn(`[generator] No data available for ${formattedDate} (API failed and no existing data). Skipping.`);
+      }
+    }
   }
 
   return {
