@@ -1,7 +1,1058 @@
 {
-  "generatedAt": "2026-01-09T10:15:05.493Z",
+  "generatedAt": "2026-01-16T10:15:17.315Z",
   "source": "Korea Customs Service (static snapshot)",
   "weeks": [
+    {
+      "startDate": "2026-01-18",
+      "export": [
+        {
+          "id": "20260118-AED-1",
+          "countryCode": "AE",
+          "currencyName": "UAE Dirham",
+          "currencyCode": "AED",
+          "rate": 399.7,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-ARS-1",
+          "countryCode": "AR",
+          "currencyName": "Argentine Peso",
+          "currencyCode": "ARS",
+          "rate": 1.01,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-AUD-1",
+          "countryCode": "AU",
+          "currencyName": "Australian Dollar",
+          "currencyCode": "AUD",
+          "rate": 982.53,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-BDT-1",
+          "countryCode": "BD",
+          "currencyName": "Taka",
+          "currencyCode": "BDT",
+          "rate": 12.01,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-BHD-1",
+          "countryCode": "BH",
+          "currencyName": "Bahraini Dinar",
+          "currencyCode": "BHD",
+          "rate": 3893.73,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-BND-1",
+          "countryCode": "BN",
+          "currencyName": "Brunei Dollar",
+          "currencyCode": "BND",
+          "rate": 1140.31,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-BRL-1",
+          "countryCode": "BR",
+          "currencyName": "Brazilian Real",
+          "currencyCode": "BRL",
+          "rate": 273.01,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-CAD-1",
+          "countryCode": "CA",
+          "currencyName": "Canadian Dollar",
+          "currencyCode": "CAD",
+          "rate": 1056.94,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-CHF-1",
+          "countryCode": "CH",
+          "currencyName": "Swiss Franc",
+          "currencyCode": "CHF",
+          "rate": 1833.68,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-CLP-1",
+          "countryCode": "CL",
+          "currencyName": "Chilean Peso",
+          "currencyCode": "CLP",
+          "rate": 1.66,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-CNY-1",
+          "countryCode": "CN",
+          "currencyName": "Yuan Renminbi",
+          "currencyCode": "CNY",
+          "rate": 210.67,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-COP-1",
+          "countryCode": "CO",
+          "currencyName": "Colombian Peso",
+          "currencyCode": "COP",
+          "rate": 0.4,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-CZK-1",
+          "countryCode": "CZ",
+          "currencyName": "Czech Koruna",
+          "currencyCode": "CZK",
+          "rate": 70.42,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-DKK-1",
+          "countryCode": "DK",
+          "currencyName": "Danish Krone",
+          "currencyCode": "DKK",
+          "rate": 228.68,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-EGP-1",
+          "countryCode": "EG",
+          "currencyName": "Egyptian Pound",
+          "currencyCode": "EGP",
+          "rate": 31.1,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-ETB-1",
+          "countryCode": "ET",
+          "currencyName": "Ethiopian Birr",
+          "currencyCode": "ETB",
+          "rate": 9.43,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-EUR-1",
+          "countryCode": "EU",
+          "currencyName": "Euro",
+          "currencyCode": "EUR",
+          "rate": 1708.65,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-FJD-1",
+          "countryCode": "FJ",
+          "currencyName": "Fiji Dollar",
+          "currencyCode": "FJD",
+          "rate": 644.29,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-GBP-1",
+          "countryCode": "GB",
+          "currencyName": "Pound Sterling",
+          "currencyCode": "GBP",
+          "rate": 1970.3,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-HKD-1",
+          "countryCode": "HK",
+          "currencyName": "Hong Kong Dollar",
+          "currencyCode": "HKD",
+          "rate": 188.27,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-HUF-1",
+          "countryCode": "HU",
+          "currencyName": "Forint",
+          "currencyCode": "HUF",
+          "rate": 4.43,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-IDR-1",
+          "countryCode": "ID",
+          "currencyName": "Rupiah",
+          "currencyCode": "IDR",
+          "rate": 0.0871,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-ILS-1",
+          "countryCode": "IL",
+          "currencyName": "Shekel",
+          "currencyCode": "ILS",
+          "rate": 466.09,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-INR-1",
+          "countryCode": "IN",
+          "currencyName": "Indian Rupee",
+          "currencyCode": "INR",
+          "rate": 16.26,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-JOD-1",
+          "countryCode": "JO",
+          "currencyName": "Jordanian Dinar",
+          "currencyCode": "JOD",
+          "rate": 2070.46,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-JPY-1",
+          "countryCode": "JP",
+          "currencyName": "Yen",
+          "currencyCode": "JPY",
+          "rate": 9.2639,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-KES-1",
+          "countryCode": "KE",
+          "currencyName": "Kenyan Shilling",
+          "currencyCode": "KES",
+          "rate": 11.38,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-KHR-1",
+          "countryCode": "KH",
+          "currencyName": "Riel",
+          "currencyCode": "KHR",
+          "rate": 0.37,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-KRW-1",
+          "countryCode": "KR",
+          "currencyName": "Won",
+          "currencyCode": "KRW",
+          "rate": 1,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-KWD-1",
+          "countryCode": "KW",
+          "currencyName": "Kuwaiti Dinar",
+          "currencyCode": "KWD",
+          "rate": 4800.39,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-KZT-1",
+          "countryCode": "KZ",
+          "currencyName": "Kazakhstan tenge",
+          "currencyCode": "KZT",
+          "rate": 2.88,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-LKR-1",
+          "countryCode": "LK",
+          "currencyName": "Sri Lanka Rupee",
+          "currencyCode": "LKR",
+          "rate": 4.75,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-LYD-1",
+          "countryCode": "LY",
+          "currencyName": "Libyan Dinar",
+          "currencyCode": "LYD",
+          "rate": 270.32,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-MMK-1",
+          "countryCode": "MM",
+          "currencyName": "Kyat",
+          "currencyCode": "MMK",
+          "rate": 0.7,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-MNT-1",
+          "countryCode": "MN",
+          "currencyName": "Tugrik",
+          "currencyCode": "MNT",
+          "rate": 0.41,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-MOP-1",
+          "countryCode": "MO",
+          "currencyName": "Pataca",
+          "currencyCode": "MOP",
+          "rate": 182.7,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-MXN-1",
+          "countryCode": "MX",
+          "currencyName": "Mexican Peso",
+          "currencyCode": "MXN",
+          "rate": 82.31,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-MYR-1",
+          "countryCode": "MY",
+          "currencyName": "Malaysian Ringgit",
+          "currencyCode": "MYR",
+          "rate": 361.64,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-NOK-1",
+          "countryCode": "NO",
+          "currencyName": "Norwegian Krone",
+          "currencyCode": "NOK",
+          "rate": 145.57,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-NPR-1",
+          "countryCode": "NP",
+          "currencyName": "Nepalese Rupee",
+          "currencyCode": "NPR",
+          "rate": 10.17,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-NZD-1",
+          "countryCode": "NZ",
+          "currencyName": "New Zealand Dollar",
+          "currencyCode": "NZD",
+          "rate": 843.55,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-OMR-1",
+          "countryCode": "OM",
+          "currencyName": "Rial Omani",
+          "currencyCode": "OMR",
+          "rate": 3812.94,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-PHP-1",
+          "countryCode": "PH",
+          "currencyName": "Philippine Peso",
+          "currencyCode": "PHP",
+          "rate": 24.74,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-PKR-1",
+          "countryCode": "PK",
+          "currencyName": "Pakistan Rupee",
+          "currencyCode": "PKR",
+          "rate": 5.23,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-PLN-1",
+          "countryCode": "PL",
+          "currencyName": "Polish Zloty",
+          "currencyCode": "PLN",
+          "rate": 405.68,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-QAR-1",
+          "countryCode": "QA",
+          "currencyName": "Qatari Rial",
+          "currencyCode": "QAR",
+          "rate": 402.13,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-RON-1",
+          "countryCode": "RO",
+          "currencyName": "Romanian Leu",
+          "currencyCode": "RON",
+          "rate": 335.72,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-RUB-1",
+          "countryCode": "RU",
+          "currencyName": "Russian Rouble",
+          "currencyCode": "RUB",
+          "rate": 18.68,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-SAR-1",
+          "countryCode": "SA",
+          "currencyName": "Saudi Riyal",
+          "currencyCode": "SAR",
+          "rate": 391.44,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-SEK-1",
+          "countryCode": "SE",
+          "currencyName": "Swedish Krona",
+          "currencyCode": "SEK",
+          "rate": 159.46,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-SGD-1",
+          "countryCode": "SG",
+          "currencyName": "Singapore Dollar",
+          "currencyCode": "SGD",
+          "rate": 1140.31,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-THB-1",
+          "countryCode": "TH",
+          "currencyName": "Baht",
+          "currencyCode": "THB",
+          "rate": 46.77,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-TRY-1",
+          "countryCode": "TR",
+          "currencyName": "Turkish Lira",
+          "currencyCode": "TRY",
+          "rate": 33.99,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-TWD-1",
+          "countryCode": "TW",
+          "currencyName": "New Taiwan Dollar",
+          "currencyCode": "TWD",
+          "rate": 46.48,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-USD-1",
+          "countryCode": "US",
+          "currencyName": "US Dollar",
+          "currencyCode": "USD",
+          "rate": 1467.96,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-UZS-1",
+          "countryCode": "UZ",
+          "currencyName": "Uzbekistan Sum",
+          "currencyCode": "UZS",
+          "rate": 0.12,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-VND-1",
+          "countryCode": "VN",
+          "currencyName": "Dong",
+          "currencyCode": "VND",
+          "rate": 0.0558,
+          "date": "2026-01-18",
+          "type": "export"
+        },
+        {
+          "id": "20260118-ZAR-1",
+          "countryCode": "ZA",
+          "currencyName": "Rand",
+          "currencyCode": "ZAR",
+          "rate": 89.47,
+          "date": "2026-01-18",
+          "type": "export"
+        }
+      ],
+      "import": [
+        {
+          "id": "20260118-AED-2",
+          "countryCode": "AE",
+          "currencyName": "UAE Dirham",
+          "currencyCode": "AED",
+          "rate": 399.7,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-ARS-2",
+          "countryCode": "AR",
+          "currencyName": "Argentine Peso",
+          "currencyCode": "ARS",
+          "rate": 1.01,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-AUD-2",
+          "countryCode": "AU",
+          "currencyName": "Australian Dollar",
+          "currencyCode": "AUD",
+          "rate": 982.53,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-BDT-2",
+          "countryCode": "BD",
+          "currencyName": "Taka",
+          "currencyCode": "BDT",
+          "rate": 12.01,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-BHD-2",
+          "countryCode": "BH",
+          "currencyName": "Bahraini Dinar",
+          "currencyCode": "BHD",
+          "rate": 3893.73,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-BND-2",
+          "countryCode": "BN",
+          "currencyName": "Brunei Dollar",
+          "currencyCode": "BND",
+          "rate": 1140.31,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-BRL-2",
+          "countryCode": "BR",
+          "currencyName": "Brazilian Real",
+          "currencyCode": "BRL",
+          "rate": 273.01,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-CAD-2",
+          "countryCode": "CA",
+          "currencyName": "Canadian Dollar",
+          "currencyCode": "CAD",
+          "rate": 1056.94,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-CHF-2",
+          "countryCode": "CH",
+          "currencyName": "Swiss Franc",
+          "currencyCode": "CHF",
+          "rate": 1833.68,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-CLP-2",
+          "countryCode": "CL",
+          "currencyName": "Chilean Peso",
+          "currencyCode": "CLP",
+          "rate": 1.66,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-CNY-2",
+          "countryCode": "CN",
+          "currencyName": "Yuan Renminbi",
+          "currencyCode": "CNY",
+          "rate": 210.67,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-COP-2",
+          "countryCode": "CO",
+          "currencyName": "Colombian Peso",
+          "currencyCode": "COP",
+          "rate": 0.4,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-CZK-2",
+          "countryCode": "CZ",
+          "currencyName": "Czech Koruna",
+          "currencyCode": "CZK",
+          "rate": 70.42,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-DKK-2",
+          "countryCode": "DK",
+          "currencyName": "Danish Krone",
+          "currencyCode": "DKK",
+          "rate": 228.68,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-EGP-2",
+          "countryCode": "EG",
+          "currencyName": "Egyptian Pound",
+          "currencyCode": "EGP",
+          "rate": 31.1,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-ETB-2",
+          "countryCode": "ET",
+          "currencyName": "Ethiopian Birr",
+          "currencyCode": "ETB",
+          "rate": 9.43,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-EUR-2",
+          "countryCode": "EU",
+          "currencyName": "Euro",
+          "currencyCode": "EUR",
+          "rate": 1708.65,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-FJD-2",
+          "countryCode": "FJ",
+          "currencyName": "Fiji Dollar",
+          "currencyCode": "FJD",
+          "rate": 644.29,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-GBP-2",
+          "countryCode": "GB",
+          "currencyName": "Pound Sterling",
+          "currencyCode": "GBP",
+          "rate": 1970.3,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-HKD-2",
+          "countryCode": "HK",
+          "currencyName": "Hong Kong Dollar",
+          "currencyCode": "HKD",
+          "rate": 188.27,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-HUF-2",
+          "countryCode": "HU",
+          "currencyName": "Forint",
+          "currencyCode": "HUF",
+          "rate": 4.43,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-IDR-2",
+          "countryCode": "ID",
+          "currencyName": "Rupiah",
+          "currencyCode": "IDR",
+          "rate": 0.0871,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-ILS-2",
+          "countryCode": "IL",
+          "currencyName": "Shekel",
+          "currencyCode": "ILS",
+          "rate": 466.09,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-INR-2",
+          "countryCode": "IN",
+          "currencyName": "Indian Rupee",
+          "currencyCode": "INR",
+          "rate": 16.26,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-JOD-2",
+          "countryCode": "JO",
+          "currencyName": "Jordanian Dinar",
+          "currencyCode": "JOD",
+          "rate": 2070.46,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-JPY-2",
+          "countryCode": "JP",
+          "currencyName": "Yen",
+          "currencyCode": "JPY",
+          "rate": 9.2639,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-KES-2",
+          "countryCode": "KE",
+          "currencyName": "Kenyan Shilling",
+          "currencyCode": "KES",
+          "rate": 11.38,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-KHR-2",
+          "countryCode": "KH",
+          "currencyName": "Riel",
+          "currencyCode": "KHR",
+          "rate": 0.37,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-KRW-2",
+          "countryCode": "KR",
+          "currencyName": "Won",
+          "currencyCode": "KRW",
+          "rate": 1,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-KWD-2",
+          "countryCode": "KW",
+          "currencyName": "Kuwaiti Dinar",
+          "currencyCode": "KWD",
+          "rate": 4800.39,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-KZT-2",
+          "countryCode": "KZ",
+          "currencyName": "Kazakhstan tenge",
+          "currencyCode": "KZT",
+          "rate": 2.88,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-LKR-2",
+          "countryCode": "LK",
+          "currencyName": "Sri Lanka Rupee",
+          "currencyCode": "LKR",
+          "rate": 4.75,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-LYD-2",
+          "countryCode": "LY",
+          "currencyName": "Libyan Dinar",
+          "currencyCode": "LYD",
+          "rate": 270.32,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-MMK-2",
+          "countryCode": "MM",
+          "currencyName": "Kyat",
+          "currencyCode": "MMK",
+          "rate": 0.7,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-MNT-2",
+          "countryCode": "MN",
+          "currencyName": "Tugrik",
+          "currencyCode": "MNT",
+          "rate": 0.41,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-MOP-2",
+          "countryCode": "MO",
+          "currencyName": "Pataca",
+          "currencyCode": "MOP",
+          "rate": 182.7,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-MXN-2",
+          "countryCode": "MX",
+          "currencyName": "Mexican Peso",
+          "currencyCode": "MXN",
+          "rate": 82.31,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-MYR-2",
+          "countryCode": "MY",
+          "currencyName": "Malaysian Ringgit",
+          "currencyCode": "MYR",
+          "rate": 361.64,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-NOK-2",
+          "countryCode": "NO",
+          "currencyName": "Norwegian Krone",
+          "currencyCode": "NOK",
+          "rate": 145.57,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-NPR-2",
+          "countryCode": "NP",
+          "currencyName": "Nepalese Rupee",
+          "currencyCode": "NPR",
+          "rate": 10.17,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-NZD-2",
+          "countryCode": "NZ",
+          "currencyName": "New Zealand Dollar",
+          "currencyCode": "NZD",
+          "rate": 843.55,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-OMR-2",
+          "countryCode": "OM",
+          "currencyName": "Rial Omani",
+          "currencyCode": "OMR",
+          "rate": 3812.94,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-PHP-2",
+          "countryCode": "PH",
+          "currencyName": "Philippine Peso",
+          "currencyCode": "PHP",
+          "rate": 24.74,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-PKR-2",
+          "countryCode": "PK",
+          "currencyName": "Pakistan Rupee",
+          "currencyCode": "PKR",
+          "rate": 5.23,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-PLN-2",
+          "countryCode": "PL",
+          "currencyName": "Polish Zloty",
+          "currencyCode": "PLN",
+          "rate": 405.68,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-QAR-2",
+          "countryCode": "QA",
+          "currencyName": "Qatari Rial",
+          "currencyCode": "QAR",
+          "rate": 402.13,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-RON-2",
+          "countryCode": "RO",
+          "currencyName": "Romanian Leu",
+          "currencyCode": "RON",
+          "rate": 335.72,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-RUB-2",
+          "countryCode": "RU",
+          "currencyName": "Russian Rouble",
+          "currencyCode": "RUB",
+          "rate": 18.68,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-SAR-2",
+          "countryCode": "SA",
+          "currencyName": "Saudi Riyal",
+          "currencyCode": "SAR",
+          "rate": 391.44,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-SEK-2",
+          "countryCode": "SE",
+          "currencyName": "Swedish Krona",
+          "currencyCode": "SEK",
+          "rate": 159.46,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-SGD-2",
+          "countryCode": "SG",
+          "currencyName": "Singapore Dollar",
+          "currencyCode": "SGD",
+          "rate": 1140.31,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-THB-2",
+          "countryCode": "TH",
+          "currencyName": "Baht",
+          "currencyCode": "THB",
+          "rate": 46.77,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-TRY-2",
+          "countryCode": "TR",
+          "currencyName": "Turkish Lira",
+          "currencyCode": "TRY",
+          "rate": 33.99,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-TWD-2",
+          "countryCode": "TW",
+          "currencyName": "New Taiwan Dollar",
+          "currencyCode": "TWD",
+          "rate": 46.48,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-USD-2",
+          "countryCode": "US",
+          "currencyName": "US Dollar",
+          "currencyCode": "USD",
+          "rate": 1467.96,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-UZS-2",
+          "countryCode": "UZ",
+          "currencyName": "Uzbekistan Sum",
+          "currencyCode": "UZS",
+          "rate": 0.12,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-VND-2",
+          "countryCode": "VN",
+          "currencyName": "Dong",
+          "currencyCode": "VND",
+          "rate": 0.0558,
+          "date": "2026-01-18",
+          "type": "import"
+        },
+        {
+          "id": "20260118-ZAR-2",
+          "countryCode": "ZA",
+          "currencyName": "Rand",
+          "currencyCode": "ZAR",
+          "rate": 89.47,
+          "date": "2026-01-18",
+          "type": "import"
+        }
+      ]
+    },
     {
       "startDate": "2026-01-11",
       "export": [
@@ -11559,1057 +12610,6 @@
           "currencyCode": "ZAR",
           "rate": 83.19,
           "date": "2025-11-02",
-          "type": "import"
-        }
-      ]
-    },
-    {
-      "startDate": "2025-10-26",
-      "export": [
-        {
-          "id": "20251026-AED-1",
-          "countryCode": "AE",
-          "currencyName": "UAE Dirham",
-          "currencyCode": "AED",
-          "rate": 388.28,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-ARS-1",
-          "countryCode": "AR",
-          "currencyName": "Argentine Peso",
-          "currencyCode": "ARS",
-          "rate": 0.96,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-AUD-1",
-          "countryCode": "AU",
-          "currencyName": "Australian Dollar",
-          "currencyCode": "AUD",
-          "rate": 927.28,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-BDT-1",
-          "countryCode": "BD",
-          "currencyName": "Taka",
-          "currencyCode": "BDT",
-          "rate": 11.68,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-BHD-1",
-          "countryCode": "BH",
-          "currencyName": "Bahraini Dinar",
-          "currencyCode": "BHD",
-          "rate": 3782.73,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-BND-1",
-          "countryCode": "BN",
-          "currencyName": "Brunei Dollar",
-          "currencyCode": "BND",
-          "rate": 1099.67,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-BRL-1",
-          "countryCode": "BR",
-          "currencyName": "Brazilian Real",
-          "currencyCode": "BRL",
-          "rate": 264.56,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-CAD-1",
-          "countryCode": "CA",
-          "currencyName": "Canadian Dollar",
-          "currencyCode": "CAD",
-          "rate": 1017.98,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-CHF-1",
-          "countryCode": "CH",
-          "currencyName": "Swiss Franc",
-          "currencyCode": "CHF",
-          "rate": 1794.03,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-CLP-1",
-          "countryCode": "CL",
-          "currencyName": "Chilean Peso",
-          "currencyCode": "CLP",
-          "rate": 1.5,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-CNY-1",
-          "countryCode": "CN",
-          "currencyName": "Yuan Renminbi",
-          "currencyCode": "CNY",
-          "rate": 200.14,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-COP-1",
-          "countryCode": "CO",
-          "currencyName": "Colombian Peso",
-          "currencyCode": "COP",
-          "rate": 0.37,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-CZK-1",
-          "countryCode": "CZ",
-          "currencyName": "Czech Koruna",
-          "currencyCode": "CZK",
-          "rate": 68.21,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-DKK-1",
-          "countryCode": "DK",
-          "currencyName": "Danish Krone",
-          "currencyCode": "DKK",
-          "rate": 221.97,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-EGP-1",
-          "countryCode": "EG",
-          "currencyName": "Egyptian Pound",
-          "currencyCode": "EGP",
-          "rate": 29.99,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-ETB-1",
-          "countryCode": "ET",
-          "currencyName": "Ethiopian Birr",
-          "currencyCode": "ETB",
-          "rate": 9.44,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-EUR-1",
-          "countryCode": "EU",
-          "currencyName": "Euro",
-          "currencyCode": "EUR",
-          "rate": 1657.81,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-FJD-1",
-          "countryCode": "FJ",
-          "currencyName": "Fiji Dollar",
-          "currencyCode": "FJD",
-          "rate": 621.91,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-GBP-1",
-          "countryCode": "GB",
-          "currencyName": "Pound Sterling",
-          "currencyCode": "GBP",
-          "rate": 1907.45,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-HKD-1",
-          "countryCode": "HK",
-          "currencyName": "Hong Kong Dollar",
-          "currencyCode": "HKD",
-          "rate": 183.52,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-HUF-1",
-          "countryCode": "HU",
-          "currencyName": "Forint",
-          "currencyCode": "HUF",
-          "rate": 4.26,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-IDR-1",
-          "countryCode": "ID",
-          "currencyName": "Rupiah",
-          "currencyCode": "IDR",
-          "rate": 0.086,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-ILS-1",
-          "countryCode": "IL",
-          "currencyName": "Shekel",
-          "currencyCode": "ILS",
-          "rate": 432.47,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-INR-1",
-          "countryCode": "IN",
-          "currencyName": "Indian Rupee",
-          "currencyCode": "INR",
-          "rate": 16.23,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-JOD-1",
-          "countryCode": "JO",
-          "currencyName": "Jordanian Dinar",
-          "currencyCode": "JOD",
-          "rate": 2011.31,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-JPY-1",
-          "countryCode": "JP",
-          "currencyName": "Yen",
-          "currencyCode": "JPY",
-          "rate": 9.4044,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-KES-1",
-          "countryCode": "KE",
-          "currencyName": "Kenyan Shilling",
-          "currencyCode": "KES",
-          "rate": 11.04,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-KHR-1",
-          "countryCode": "KH",
-          "currencyName": "Riel",
-          "currencyCode": "KHR",
-          "rate": 0.35,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-KRW-1",
-          "countryCode": "KR",
-          "currencyName": "Won",
-          "currencyCode": "KRW",
-          "rate": 1,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-KWD-1",
-          "countryCode": "KW",
-          "currencyName": "Kuwaiti Dinar",
-          "currencyCode": "KWD",
-          "rate": 4655.5,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-KZT-1",
-          "countryCode": "KZ",
-          "currencyName": "Kazakhstan tenge",
-          "currencyCode": "KZT",
-          "rate": 2.65,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-LKR-1",
-          "countryCode": "LK",
-          "currencyName": "Sri Lanka Rupee",
-          "currencyCode": "LKR",
-          "rate": 4.7,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-LYD-1",
-          "countryCode": "LY",
-          "currencyName": "Libyan Dinar",
-          "currencyCode": "LYD",
-          "rate": 262.45,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-MMK-1",
-          "countryCode": "MM",
-          "currencyName": "Kyat",
-          "currencyCode": "MMK",
-          "rate": 0.68,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-MNT-1",
-          "countryCode": "MN",
-          "currencyName": "Tugrik",
-          "currencyCode": "MNT",
-          "rate": 0.4,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-MOP-1",
-          "countryCode": "MO",
-          "currencyName": "Pataca",
-          "currencyCode": "MOP",
-          "rate": 178.07,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-MXN-1",
-          "countryCode": "MX",
-          "currencyName": "Mexican Peso",
-          "currencyCode": "MXN",
-          "rate": 77.45,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-MYR-1",
-          "countryCode": "MY",
-          "currencyName": "Malaysian Ringgit",
-          "currencyCode": "MYR",
-          "rate": 337.26,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-NOK-1",
-          "countryCode": "NO",
-          "currencyName": "Norwegian Krone",
-          "currencyCode": "NOK",
-          "rate": 142.11,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-NPR-1",
-          "countryCode": "NP",
-          "currencyName": "Nepalese Rupee",
-          "currencyCode": "NPR",
-          "rate": 10.13,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-NZD-1",
-          "countryCode": "NZ",
-          "currencyName": "New Zealand Dollar",
-          "currencyCode": "NZD",
-          "rate": 818.88,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-OMR-1",
-          "countryCode": "OM",
-          "currencyName": "Rial Omani",
-          "currencyCode": "OMR",
-          "rate": 3703.81,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-PHP-1",
-          "countryCode": "PH",
-          "currencyName": "Philippine Peso",
-          "currencyCode": "PHP",
-          "rate": 24.45,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-PKR-1",
-          "countryCode": "PK",
-          "currencyName": "Pakistan Rupee",
-          "currencyCode": "PKR",
-          "rate": 5.04,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-PLN-1",
-          "countryCode": "PL",
-          "currencyName": "Polish Zloty",
-          "currencyCode": "PLN",
-          "rate": 391.2,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-QAR-1",
-          "countryCode": "QA",
-          "currencyName": "Qatari Rial",
-          "currencyCode": "QAR",
-          "rate": 391.22,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-RON-1",
-          "countryCode": "RO",
-          "currencyName": "Romanian Leu",
-          "currencyCode": "RON",
-          "rate": 326.04,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-RUB-1",
-          "countryCode": "RU",
-          "currencyName": "Russian Rouble",
-          "currencyCode": "RUB",
-          "rate": 17.56,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-SAR-1",
-          "countryCode": "SA",
-          "currencyName": "Saudi Riyal",
-          "currencyCode": "SAR",
-          "rate": 380.23,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-SEK-1",
-          "countryCode": "SE",
-          "currencyName": "Swedish Krona",
-          "currencyCode": "SEK",
-          "rate": 151.5,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-SGD-1",
-          "countryCode": "SG",
-          "currencyName": "Singapore Dollar",
-          "currencyCode": "SGD",
-          "rate": 1099.67,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-THB-1",
-          "countryCode": "TH",
-          "currencyName": "Baht",
-          "currencyCode": "THB",
-          "rate": 43.53,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-TRY-1",
-          "countryCode": "TR",
-          "currencyName": "Turkish Lira",
-          "currencyCode": "TRY",
-          "rate": 33.97,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-TWD-1",
-          "countryCode": "TW",
-          "currencyName": "New Taiwan Dollar",
-          "currencyCode": "TWD",
-          "rate": 46.45,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-USD-1",
-          "countryCode": "US",
-          "currencyName": "US Dollar",
-          "currencyCode": "USD",
-          "rate": 1426.02,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-UZS-1",
-          "countryCode": "UZ",
-          "currencyName": "Uzbekistan Sum",
-          "currencyCode": "UZS",
-          "rate": 0.12,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-VND-1",
-          "countryCode": "VN",
-          "currencyName": "Dong",
-          "currencyCode": "VND",
-          "rate": 0.0541,
-          "date": "2025-10-26",
-          "type": "export"
-        },
-        {
-          "id": "20251026-ZAR-1",
-          "countryCode": "ZA",
-          "currencyName": "Rand",
-          "currencyCode": "ZAR",
-          "rate": 82.18,
-          "date": "2025-10-26",
-          "type": "export"
-        }
-      ],
-      "import": [
-        {
-          "id": "20251026-AED-2",
-          "countryCode": "AE",
-          "currencyName": "UAE Dirham",
-          "currencyCode": "AED",
-          "rate": 388.28,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-ARS-2",
-          "countryCode": "AR",
-          "currencyName": "Argentine Peso",
-          "currencyCode": "ARS",
-          "rate": 0.96,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-AUD-2",
-          "countryCode": "AU",
-          "currencyName": "Australian Dollar",
-          "currencyCode": "AUD",
-          "rate": 927.28,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-BDT-2",
-          "countryCode": "BD",
-          "currencyName": "Taka",
-          "currencyCode": "BDT",
-          "rate": 11.68,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-BHD-2",
-          "countryCode": "BH",
-          "currencyName": "Bahraini Dinar",
-          "currencyCode": "BHD",
-          "rate": 3782.73,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-BND-2",
-          "countryCode": "BN",
-          "currencyName": "Brunei Dollar",
-          "currencyCode": "BND",
-          "rate": 1099.67,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-BRL-2",
-          "countryCode": "BR",
-          "currencyName": "Brazilian Real",
-          "currencyCode": "BRL",
-          "rate": 264.56,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-CAD-2",
-          "countryCode": "CA",
-          "currencyName": "Canadian Dollar",
-          "currencyCode": "CAD",
-          "rate": 1017.98,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-CHF-2",
-          "countryCode": "CH",
-          "currencyName": "Swiss Franc",
-          "currencyCode": "CHF",
-          "rate": 1794.03,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-CLP-2",
-          "countryCode": "CL",
-          "currencyName": "Chilean Peso",
-          "currencyCode": "CLP",
-          "rate": 1.5,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-CNY-2",
-          "countryCode": "CN",
-          "currencyName": "Yuan Renminbi",
-          "currencyCode": "CNY",
-          "rate": 200.14,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-COP-2",
-          "countryCode": "CO",
-          "currencyName": "Colombian Peso",
-          "currencyCode": "COP",
-          "rate": 0.37,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-CZK-2",
-          "countryCode": "CZ",
-          "currencyName": "Czech Koruna",
-          "currencyCode": "CZK",
-          "rate": 68.21,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-DKK-2",
-          "countryCode": "DK",
-          "currencyName": "Danish Krone",
-          "currencyCode": "DKK",
-          "rate": 221.97,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-EGP-2",
-          "countryCode": "EG",
-          "currencyName": "Egyptian Pound",
-          "currencyCode": "EGP",
-          "rate": 29.99,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-ETB-2",
-          "countryCode": "ET",
-          "currencyName": "Ethiopian Birr",
-          "currencyCode": "ETB",
-          "rate": 9.44,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-EUR-2",
-          "countryCode": "EU",
-          "currencyName": "Euro",
-          "currencyCode": "EUR",
-          "rate": 1657.81,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-FJD-2",
-          "countryCode": "FJ",
-          "currencyName": "Fiji Dollar",
-          "currencyCode": "FJD",
-          "rate": 621.91,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-GBP-2",
-          "countryCode": "GB",
-          "currencyName": "Pound Sterling",
-          "currencyCode": "GBP",
-          "rate": 1907.45,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-HKD-2",
-          "countryCode": "HK",
-          "currencyName": "Hong Kong Dollar",
-          "currencyCode": "HKD",
-          "rate": 183.52,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-HUF-2",
-          "countryCode": "HU",
-          "currencyName": "Forint",
-          "currencyCode": "HUF",
-          "rate": 4.26,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-IDR-2",
-          "countryCode": "ID",
-          "currencyName": "Rupiah",
-          "currencyCode": "IDR",
-          "rate": 0.086,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-ILS-2",
-          "countryCode": "IL",
-          "currencyName": "Shekel",
-          "currencyCode": "ILS",
-          "rate": 432.47,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-INR-2",
-          "countryCode": "IN",
-          "currencyName": "Indian Rupee",
-          "currencyCode": "INR",
-          "rate": 16.23,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-JOD-2",
-          "countryCode": "JO",
-          "currencyName": "Jordanian Dinar",
-          "currencyCode": "JOD",
-          "rate": 2011.31,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-JPY-2",
-          "countryCode": "JP",
-          "currencyName": "Yen",
-          "currencyCode": "JPY",
-          "rate": 9.4044,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-KES-2",
-          "countryCode": "KE",
-          "currencyName": "Kenyan Shilling",
-          "currencyCode": "KES",
-          "rate": 11.04,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-KHR-2",
-          "countryCode": "KH",
-          "currencyName": "Riel",
-          "currencyCode": "KHR",
-          "rate": 0.35,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-KRW-2",
-          "countryCode": "KR",
-          "currencyName": "Won",
-          "currencyCode": "KRW",
-          "rate": 1,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-KWD-2",
-          "countryCode": "KW",
-          "currencyName": "Kuwaiti Dinar",
-          "currencyCode": "KWD",
-          "rate": 4655.5,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-KZT-2",
-          "countryCode": "KZ",
-          "currencyName": "Kazakhstan tenge",
-          "currencyCode": "KZT",
-          "rate": 2.65,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-LKR-2",
-          "countryCode": "LK",
-          "currencyName": "Sri Lanka Rupee",
-          "currencyCode": "LKR",
-          "rate": 4.7,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-LYD-2",
-          "countryCode": "LY",
-          "currencyName": "Libyan Dinar",
-          "currencyCode": "LYD",
-          "rate": 262.45,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-MMK-2",
-          "countryCode": "MM",
-          "currencyName": "Kyat",
-          "currencyCode": "MMK",
-          "rate": 0.68,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-MNT-2",
-          "countryCode": "MN",
-          "currencyName": "Tugrik",
-          "currencyCode": "MNT",
-          "rate": 0.4,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-MOP-2",
-          "countryCode": "MO",
-          "currencyName": "Pataca",
-          "currencyCode": "MOP",
-          "rate": 178.07,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-MXN-2",
-          "countryCode": "MX",
-          "currencyName": "Mexican Peso",
-          "currencyCode": "MXN",
-          "rate": 77.45,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-MYR-2",
-          "countryCode": "MY",
-          "currencyName": "Malaysian Ringgit",
-          "currencyCode": "MYR",
-          "rate": 337.26,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-NOK-2",
-          "countryCode": "NO",
-          "currencyName": "Norwegian Krone",
-          "currencyCode": "NOK",
-          "rate": 142.11,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-NPR-2",
-          "countryCode": "NP",
-          "currencyName": "Nepalese Rupee",
-          "currencyCode": "NPR",
-          "rate": 10.13,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-NZD-2",
-          "countryCode": "NZ",
-          "currencyName": "New Zealand Dollar",
-          "currencyCode": "NZD",
-          "rate": 818.88,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-OMR-2",
-          "countryCode": "OM",
-          "currencyName": "Rial Omani",
-          "currencyCode": "OMR",
-          "rate": 3703.81,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-PHP-2",
-          "countryCode": "PH",
-          "currencyName": "Philippine Peso",
-          "currencyCode": "PHP",
-          "rate": 24.45,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-PKR-2",
-          "countryCode": "PK",
-          "currencyName": "Pakistan Rupee",
-          "currencyCode": "PKR",
-          "rate": 5.04,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-PLN-2",
-          "countryCode": "PL",
-          "currencyName": "Polish Zloty",
-          "currencyCode": "PLN",
-          "rate": 391.2,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-QAR-2",
-          "countryCode": "QA",
-          "currencyName": "Qatari Rial",
-          "currencyCode": "QAR",
-          "rate": 391.22,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-RON-2",
-          "countryCode": "RO",
-          "currencyName": "Romanian Leu",
-          "currencyCode": "RON",
-          "rate": 326.04,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-RUB-2",
-          "countryCode": "RU",
-          "currencyName": "Russian Rouble",
-          "currencyCode": "RUB",
-          "rate": 17.56,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-SAR-2",
-          "countryCode": "SA",
-          "currencyName": "Saudi Riyal",
-          "currencyCode": "SAR",
-          "rate": 380.23,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-SEK-2",
-          "countryCode": "SE",
-          "currencyName": "Swedish Krona",
-          "currencyCode": "SEK",
-          "rate": 151.5,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-SGD-2",
-          "countryCode": "SG",
-          "currencyName": "Singapore Dollar",
-          "currencyCode": "SGD",
-          "rate": 1099.67,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-THB-2",
-          "countryCode": "TH",
-          "currencyName": "Baht",
-          "currencyCode": "THB",
-          "rate": 43.53,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-TRY-2",
-          "countryCode": "TR",
-          "currencyName": "Turkish Lira",
-          "currencyCode": "TRY",
-          "rate": 33.97,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-TWD-2",
-          "countryCode": "TW",
-          "currencyName": "New Taiwan Dollar",
-          "currencyCode": "TWD",
-          "rate": 46.45,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-USD-2",
-          "countryCode": "US",
-          "currencyName": "US Dollar",
-          "currencyCode": "USD",
-          "rate": 1426.02,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-UZS-2",
-          "countryCode": "UZ",
-          "currencyName": "Uzbekistan Sum",
-          "currencyCode": "UZS",
-          "rate": 0.12,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-VND-2",
-          "countryCode": "VN",
-          "currencyName": "Dong",
-          "currencyCode": "VND",
-          "rate": 0.0541,
-          "date": "2025-10-26",
-          "type": "import"
-        },
-        {
-          "id": "20251026-ZAR-2",
-          "countryCode": "ZA",
-          "currencyName": "Rand",
-          "currencyCode": "ZAR",
-          "rate": 82.18,
-          "date": "2025-10-26",
           "type": "import"
         }
       ]
